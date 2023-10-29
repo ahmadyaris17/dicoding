@@ -13,14 +13,6 @@ body {
     color: #00a2c6;
   }
    
-  footer {
-    padding: 20px;
-    color: white;
-    background-color: #00a2c6;
-    text-align: center;
-    font-weight: bold ;
-  }
-  
   nav a {
     font-size: 18px;
     font-weight: 400;
@@ -32,6 +24,24 @@ body {
     color: red;
     font-weight: bold;
   }
+/* NAV FLEXBOX */
+
+nav ul {
+  padding-inline: 4rem;
+  display: flex;
+  gap: 50px;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav {
+  background-color: #00a2c6;
+  padding: 5px;
+  position :sticky;
+  top: 0;
+}
 
   .profile {
 
@@ -49,11 +59,6 @@ body {
     width: 200px;
   }
 
-  .card {
-    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
-    border-radius:5px;
-}
-
 .jumbotron {
   font-size: 20px;
   padding: 60px;
@@ -62,48 +67,57 @@ body {
   color: white;
 }
 
-nav li {
-  display: inline;
-  list-style-type: none;
-  margin-right: 30px;
-  text-align: center;
-
-}
-
-nav {
-  background-color: #00a2c6;
-  padding: 5px;
-  position :sticky;
-  top: 0;
-}
-
 header {
   display: inline;
 }
 
 main {
   padding: 20px;
+  display: flex;
+  gap: 1.5rem;
 }
 
+.card {
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+  border-radius:5px;
+  padding: 20px;
+}
 #content {
-  float: left;
-  width: 75%;
+ flex: 5;
+ display: flex;
+flex-flow: column nowrap;
+gap: 1rem 2rem;
 }
 
 aside {
-  float: right;
-  width: 25%;
-  padding-left: 20px;
+  flex: 1;
 }
 
-main {
-  overflow: auto;
+footer {
+  padding: 20px;
+  color: white;
+  background-color: #00a2c6;
+  text-align: center;
+  font-weight: bold ;
 }
+
 
 /* RESPONSIVE DEVICE*/
-@media screen and (max-width: 1000px) {
-  #content, aside {
-    width: 100%;
-    padding: 0;
+@media screen and (max-width: 1200px) {
+main {
+  flex-flow: column nowrap;
+}
+main aside {
+  align-self: center;
+}
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+  }
+ 
+  main aside {
+    align-self: stretch;
   }
 }
